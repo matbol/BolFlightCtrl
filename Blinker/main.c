@@ -1,5 +1,6 @@
 #include "stm32f10x.h"
- /* See Reference Manual for the register names!*/
+#include "timer.h"
+/* See Reference Manual for the register names!*/
 void delay(long cycles)
 {
   while(cycles >0)
@@ -12,7 +13,7 @@ void gpio_ports_enable(void)
   GPIOC->CRH = 0x44344444; //Pin C13 enable. If you don't like number 13, use pin C_1_P.M. LOL
 	/*Avoid Magic Numbers!*/
 }
- 
+
 int main(void)
 {
  gpio_ports_enable();
